@@ -1,0 +1,450 @@
+<!-- Design System -->
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>CRICKQUIZ | Elite Master Cricket Experience</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&amp;family=Work+Sans:wght@400;500;700&amp;family=JetBrains+Mono:wght@700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..900&amp;family=Oswald:wght@100..900&amp;family=Work+Sans:wght@100..900&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#f7e624",
+                        "surface": "#0e1225",
+                        "on-primary-fixed": "#00210e",
+                        "primary": "#69ec9c",
+                        "surface-container-low": "#161a2d",
+                        "stadium-white": "#FFFFFF",
+                        "primary-fixed-dim": "#5bde90",
+                        "surface-container-highest": "#303448",
+                        "surface-container-lowest": "#090d1f",
+                        "on-secondary-container": "#635b00",
+                        "on-surface": "#dee1fb",
+                        "surface-container-high": "#25293d",
+                        "on-secondary-fixed": "#1f1c00",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed-variant": "#00522c",
+                        "surface-bright": "#34384d",
+                        "gold-trophy": "#D9B04A",
+                        "inverse-on-surface": "#2b2f43",
+                        "surface-dim": "#0e1225",
+                        "surface-container": "#1b1e32",
+                        "tertiary-fixed": "#ffdbcd",
+                        "on-tertiary-fixed": "#360f00",
+                        "surface-tint": "#5bde90",
+                        "outline": "#879488",
+                        "inverse-surface": "#dee1fb",
+                        "on-tertiary-fixed-variant": "#763314",
+                        "background": "#0e1225",
+                        "tertiary-fixed-dim": "#ffb597",
+                        "tertiary": "#ffc7b1",
+                        "error-container": "#93000a",
+                        "tertiary-container": "#ffa078",
+                        "inverse-primary": "#006d3c",
+                        "primary-fixed": "#79fcaa",
+                        "primary-container": "#4acf82",
+                        "outline-variant": "#3d4a3f",
+                        "surface-variant": "#303448",
+                        "on-secondary-fixed-variant": "#4e4800",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary": "#363100",
+                        "secondary": "#fff16b",
+                        "on-primary-container": "#00542d",
+                        "on-primary": "#00391c",
+                        "secondary-fixed-dim": "#d9c900",
+                        "on-background": "#dee1fb",
+                        "on-error": "#690005",
+                        "on-surface-variant": "#bccabc",
+                        "secondary-container": "#e5d500",
+                        "on-tertiary": "#581d01",
+                        "on-tertiary-container": "#783515",
+                        "power-red": "#EF4123",
+                        "ipl-blue": "#19398A"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "skew-angle": "-6deg",
+                        "gutter": "16px",
+                        "section-gap": "32px",
+                        "unit": "4px",
+                        "container-padding": "20px"
+                    },
+                    "fontFamily": {
+                        "display-hero": ["Oswald"],
+                        "body-md": ["Work Sans"],
+                        "headline-md": ["Oswald"],
+                        "headline-lg": ["Oswald"],
+                        "stat-value": ["Oswald"],
+                        "body-lg": ["Work Sans"],
+                        "headline-lg-mobile": ["Oswald"],
+                        "label-caps": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "display-hero": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "stat-value": ["20px", {"lineHeight": "24px", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .skew-container { transform: skewX(-6deg); }
+        .unskew-content { transform: skewX(6deg); }
+        .glass-panel {
+            background: rgba(22, 26, 45, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .victory-glow {
+            filter: drop-shadow(0 0 15px rgba(105, 236, 156, 0.4));
+        }
+        .animate-scroll {
+            animation: scroll 20s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .stadium-flare {
+            background: radial-gradient(circle at top right, rgba(105, 236, 156, 0.15), transparent 70%);
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0%, 100% { transform: translateY(0) rotate(2deg); }
+            50% { transform: translateY(-20px) rotate(-1deg); }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden selection:bg-primary selection:text-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-stadium-white/10 shadow-[0_0_20px_rgba(105,236,156,0.2)]">
+<div class="flex justify-between items-center px-container-padding py-4 max-w-7xl mx-auto">
+<div class="font-display-hero text-headline-lg tracking-tighter text-primary italic">CRICKQUIZ</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface/70 font-medium hover:text-primary hover:drop-shadow-[0_0_8px_#69ec9c] transition-all duration-300" href="#">Tournaments</a>
+<a class="text-on-surface/70 font-medium hover:text-primary hover:drop-shadow-[0_0_8px_#69ec9c] transition-all duration-300" href="#">Leaderboard</a>
+<a class="text-on-surface/70 font-medium hover:text-primary hover:drop-shadow-[0_0_8px_#69ec9c] transition-all duration-300" href="#">Features</a>
+</div>
+<a href="https://play.google.com/store/apps/details?id=com.crickquizandroid.app" target="_blank" class="border border-primary/30 bg-primary/5 px-6 py-2 rounded-none skew-container hover:bg-primary/20 hover:border-primary transition-all group shadow-[0_0_15px_rgba(105,236,156,0.2)] hover:shadow-[0_0_25px_rgba(105,236,156,0.4)] flex items-center gap-2">
+    <div class="unskew-content flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary text-2xl">play_store</span>
+        <div class="text-left">
+            <div class="text-[8px] font-label-caps text-primary/70 leading-none uppercase">Get it on</div>
+            <div class="font-display-hero text-sm font-bold uppercase leading-none">Google Play</div>
+        </div>
+    </div>
+</a>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-24 overflow-hidden">
+<!-- Background -->
+<div class="absolute inset-0 z-0">
+<img alt="" class="w-full h-full object-cover opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDit3RXzRY2lRjcaST-wVB0FEzZXd4DV_9r232gzGOhf5iQmDgzLmypryadFZmgOgXZrKIxfZAXOCSIdFoNf9w3U-83GO5uLeRPd-53uJhAQPgrdLuYoRKabYboTT1LLSu9YyIh-34XDJX16DYCd2i8ZSSuVsMH6iBHEMsC42agjTtF2PdJL3186Jbpyjwwod0oVZl7D9YncpILXQSxYmS6xz8B5XUNwpA7SpABNxhwyIljqbrwppu1DS43o7dbtiFBgiTC2WwXBU4">
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-surface/40"></div>
+<div class="absolute inset-0 stadium-flare"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-container-padding flex flex-col md:flex-row items-center gap-12">
+<div class="w-full md:w-1/2 text-center md:text-left">
+<div class="inline-block px-4 py-1 mb-6 skew-container bg-primary/20 border-l-4 border-primary">
+<span class="unskew-content font-label-caps text-primary uppercase block">ELITE MASTER SEASON 4</span>
+</div>
+<h1 class="font-display-hero text-display-hero md:text-6xl uppercase leading-tight italic tracking-tighter mb-8">
+                    THE ULTIMATE <span class="text-primary drop-shadow-[0_0_15px_rgba(105,236,156,0.6)]">CRICKET QUIZ</span> EXPERIENCE
+                </h1>
+<p class="font-body-lg text-on-surface/80 mb-10 max-w-lg">
+                    Step into the stadium. Prove your cricketing IQ, climb the global leaderboards, and win legendary rewards in the most immersive cricket gaming ecosystem ever built.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+<a href="https://play.google.com/store/apps/details?id=com.crickquizandroid.app" target="_blank" class="border border-primary/30 bg-primary/5 px-10 py-5 rounded-none skew-container hover:bg-primary/20 hover:border-primary transition-all group shadow-[0_0_15px_rgba(105,236,156,0.2)] hover:shadow-[0_0_25px_rgba(105,236,156,0.4)] flex items-center gap-3">
+    <div class="unskew-content flex items-center gap-3">
+        <span class="material-symbols-outlined text-primary text-3xl">play_store</span>
+        <div class="text-left">
+            <div class="text-[10px] font-label-caps text-primary/70 leading-none uppercase">Get it on</div>
+            <div class="font-display-hero text-xl font-bold uppercase leading-none">Google Play</div>
+        </div>
+    </div>
+</a></div>
+</div>
+<!-- Floating App Mockup -->
+<div class="w-full md:w-1/2 flex justify-center relative">
+<div class="absolute -inset-10 bg-primary/10 blur-[80px] rounded-full"></div>
+<div class="relative floating">
+<img alt="" class="w-full max-w-[400px] drop-shadow-[0_35px_60px_rgba(0,0,0,0.8)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDmSgKYiKoHGZg_58VwMKjVIB4_ATVES7_iJOCz9DP_lP6g0MhMuIRs4n0Y_36j7r7BcmC81N-n5H1E8ilu-G4cDJAbKqiwiTQWUExeU2DGX-lSv5v08hU2xnmFVgH_wUXU2fWzfI6buh5A6JOM1AYSJSdN5mhxJtofdLV3jt7TAyu_17oswgJ8ZrZoUESWNts0EdKPGkXWx856_vpsuu2HhvcaqAFBUQH3a9D7xJj1yzkT79K57aFUjDedIiu3eMG_Buv-9AOmc4">
+</div>
+</div>
+</div>
+</section>
+<!-- Stats/Hype Bar -->
+<div class="relative z-20 bg-primary py-4 overflow-hidden -mt-8 border-y-4 border-surface shadow-[0_0_30px_rgba(105,236,156,0.3)]">
+<div class="flex whitespace-nowrap animate-scroll">
+<div class="flex items-center gap-12 px-6">
+<span class="font-display-hero text-3xl text-surface italic font-extrabold uppercase">5M+ QUIZZES PLAYED</span>
+<span class="text-surface font-bold text-2xl">|</span>
+<span class="font-display-hero text-3xl text-surface italic font-extrabold uppercase">100K+ ACTIVE FANS</span>
+<span class="text-surface font-bold text-2xl">|</span>
+<span class="font-display-hero text-3xl text-surface italic font-extrabold uppercase">$1M+ IN REWARDS</span>
+<span class="text-surface font-bold text-2xl">|</span>
+</div>
+<div class="flex items-center gap-12 px-6">
+<span class="font-display-hero text-3xl text-surface italic font-extrabold uppercase">5M+ QUIZZES PLAYED</span>
+<span class="text-surface font-bold text-2xl">|</span>
+<span class="font-display-hero text-3xl text-surface italic font-extrabold uppercase">100K+ ACTIVE FANS</span>
+<span class="text-surface font-bold text-2xl">|</span>
+<span class="font-display-hero text-3xl text-surface italic font-extrabold uppercase">$1M+ IN REWARDS</span>
+<span class="text-surface font-bold text-2xl">|</span>
+</div>
+</div>
+</div>
+<!-- Features Section -->
+<section class="relative py-section-gap overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="" class="w-full h-full object-cover opacity-20 filter grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTO9SsRmnH4mob-gEOVrmapJ-oqHK9jaslI7u-Caxv09gpYbW7teYVxtHS-ui9_F3gLZJCuA7AmqqfIk05gSe1RXrsR3LskNRax8YIkMyuXxHu70Yay_G7K-0w-QkGYKUgDUhDfWJ6beeURg7PYh3pkjZYfmFV1nFjrqRf75h4zsm3xYiBCVx9_aV4sCRmI4ueLmvMH09WotkZlSzavd7xJIK8Bj7DZmDC33wNdt9yr6_5TK2HfVPtGTUcfeCRkaGJF70-lHzLiME">
+<div class="absolute inset-0 bg-surface/80"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-container-padding">
+<div class="text-center mb-16">
+<h2 class="font-display-hero text-headline-lg md:text-5xl uppercase mb-4 italic tracking-tighter">UNLEASH THE <span class="text-primary">ELITE PLAYER</span> WITHIN</h2>
+<div class="w-24 h-1 bg-primary mx-auto"></div>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Feature 1 -->
+<div class="group relative skew-container bg-surface-container-low p-10 border-l-2 border-primary/30 hover:border-primary transition-all overflow-hidden glass-panel">
+<div class="unskew-content">
+<span class="material-symbols-outlined text-primary text-5xl mb-6 block" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+<h3 class="font-display-hero text-headline-md uppercase mb-4">Predict. Compete. Dominate.</h3>
+<p class="text-on-surface/70">Real-time prediction engine that tests your match intuition. Score points for every correct call as the live action unfolds.</p>
+</div>
+<div class="absolute -bottom-10 -right-10 w-32 h-32 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/20 transition-all"></div>
+</div>
+<!-- Feature 2 -->
+<div class="group relative skew-container bg-surface-container-high p-10 border-l-2 border-primary/30 hover:border-primary transition-all overflow-hidden glass-panel">
+<div class="unskew-content">
+<span class="material-symbols-outlined text-primary text-5xl mb-6 block">event_upcoming</span>
+<h3 class="font-display-hero text-headline-md uppercase mb-4">Daily Quiz Challenges</h3>
+<p class="text-on-surface/70">Wake up to fresh trivia and situational challenges. Maintain your streak to earn exclusive master currency and NFTs.</p>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="group relative skew-container bg-surface-container-low p-10 border-l-2 border-primary/30 hover:border-primary transition-all overflow-hidden glass-panel">
+<div class="unskew-content">
+<span class="material-symbols-outlined text-primary text-5xl mb-6 block">groups</span>
+<h3 class="font-display-hero text-headline-md uppercase mb-4">Multiplayer Fan Battles</h3>
+<p class="text-on-surface/70">Challenge friends or random fans globally in head-to-head lightning rounds. Winner takes all the bragging rights.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- App Showcase -->
+<section class="py-section-gap bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto px-container-padding flex flex-col md:flex-row items-center gap-20">
+<div class="w-full md:w-1/2 order-2 md:order-1">
+<h2 class="font-display-hero text-headline-lg md:text-5xl uppercase mb-8 italic tracking-tighter">THE FUTURE OF <span class="text-primary">FANDOM</span></h2>
+<ul class="space-y-8">
+<li class="flex items-start gap-4">
+<div class="mt-1 w-8 h-8 bg-primary/10 flex items-center justify-center border border-primary text-primary font-bold">01</div>
+<div>
+<h4 class="font-display-hero text-headline-md text-primary uppercase">Live Match Integration</h4>
+<p class="text-on-surface/70">Sync your gameplay with live broadcasts for the ultimate second-screen experience.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="mt-1 w-8 h-8 bg-primary/10 flex items-center justify-center border border-primary text-primary font-bold">02</div>
+<div>
+<h4 class="font-display-hero text-headline-md text-primary uppercase">Exclusive Player Cards</h4>
+<p class="text-on-surface/70">Collect digital player assets that boost your scoring potential in high-stakes leagues.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="mt-1 w-8 h-8 bg-primary/10 flex items-center justify-center border border-primary text-primary font-bold">03</div>
+<div>
+<h4 class="font-display-hero text-headline-md text-primary uppercase">Global Ranking System</h4>
+<p class="text-on-surface/70">See where you stand against the world. Top 10% get invited to the Elite Master tournament.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="w-full md:w-1/2 order-1 md:order-2 flex justify-center">
+<div class="relative">
+<!-- Glow effect -->
+<div class="absolute inset-0 bg-primary/20 blur-[100px] rounded-full scale-150"></div>
+<img alt="" class="w-full max-w-[450px] relative z-10 hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDmSgKYiKoHGZg_58VwMKjVIB4_ATVES7_iJOCz9DP_lP6g0MhMuIRs4n0Y_36j7r7BcmC81N-n5H1E8ilu-G4cDJAbKqiwiTQWUExeU2DGX-lSv5v08hU2xnmFVgH_wUXU2fWzfI6buh5A6JOM1AYSJSdN5mhxJtofdLV3jt7TAyu_17oswgJ8ZrZoUESWNts0EdKPGkXWx856_vpsuu2HhvcaqAFBUQH3a9D7xJj1yzkT79K57aFUjDedIiu3eMG_Buv-9AOmc4">
+</div>
+</div>
+</div>
+</section>
+<!-- Leaderboard -->
+<section class="py-section-gap relative overflow-hidden bg-surface">
+<div class="max-w-5xl mx-auto px-container-padding relative z-10">
+<div class="text-center mb-16">
+<h2 class="font-display-hero text-headline-lg uppercase italic tracking-tighter mb-4">GLOBAL <span class="text-primary">HALL OF FAME</span></h2>
+<p class="text-on-surface/60 font-label-caps">REAL-TIME RANKINGS UPDATE</p>
+</div>
+<div class="glass-panel overflow-hidden">
+<table class="w-full text-left">
+<thead>
+<tr class="border-b border-primary/20 font-label-caps text-primary uppercase text-sm">
+<th class="px-6 py-4">Rank</th>
+<th class="px-6 py-4">Master Player</th>
+<th class="px-6 py-4">Region</th>
+<th class="px-6 py-4 text-right">Points</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-white/5">
+<tr class="hover:bg-primary/5 transition-colors group">
+<td class="px-6 py-6 font-display-hero text-2xl italic group-hover:text-primary">01</td>
+<td class="px-6 py-6 font-bold flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-container-highest rounded-full overflow-hidden border border-primary">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="A stylized digital avatar of a professional cricket player with a modern athletic look, against a neon green and dark navy background, embodying the high-stakes elite gaming aesthetic of CrickQuiz." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJiDgWUsEo7H8TUGAt4pU2OGI78lNskgHLN6Svx9tY2vNog8tRDH7t-JroagYTUQxQ6xL3T5bRVS7HliyQ8kwmGbeSC1tbiCtxn2BWf9HJKU9VWlx2c4OwLV4nHWP6CAldU0t18k4mBPiN0_-1Xe_h4vSXh9pcisyzFBYadPu2P7yfhLtnf3HWPHUmrY1VJipH5Z0ypljNG61E7T3Khr2uxEfRuZSpjsMc8CRVx9Ys_vr5bB487Xl1Yulc-hay0H5KS0PW6QuA_ow">
+</div>
+                                Master_Dhoni7
+                            </td>
+<td class="px-6 py-6 font-label-caps opacity-70">INDIA</td>
+<td class="px-6 py-6 text-right font-display-hero text-primary text-2xl">1,240,500</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors group">
+<td class="px-6 py-6 font-display-hero text-2xl italic">02</td>
+<td class="px-6 py-6 font-bold flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-container-highest rounded-full overflow-hidden border border-white/20">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="A stylized digital avatar of a professional cricket player with a modern athletic look, against a neon green and dark navy background, embodying the high-stakes elite gaming aesthetic of CrickQuiz." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5GQWEty3JC-XEvhsF5a1o6C54NOXVA-yP9GoDRicuhIg-naEbDAxZXIjNSHOfq722nMAsitCNPwwOMhVYKMf9ts23xAot9Kf7uMPNXhfCflCmfKHBk2C6dZ5fFCTFUlxwKMq-XRqtQNbiatH7sftgOu9NhVqkGylas5kjcy883UFwwtRyTozOXQvtWUp1XC6wpQedbjCV7YGjIf39K6tu2Opu84C2JShxkoriumKELpIEaUJ4nsBhOpJwRZGyuBFJNjxfMC60AiE">
+</div>
+                                BazBall_Elite
+                            </td>
+<td class="px-6 py-6 font-label-caps opacity-70">UK</td>
+<td class="px-6 py-6 text-right font-display-hero text-on-surface text-2xl">1,192,300</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors group">
+<td class="px-6 py-6 font-display-hero text-2xl italic">03</td>
+<td class="px-6 py-6 font-bold flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-container-highest rounded-full overflow-hidden border border-white/20">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="A stylized digital avatar of a professional cricket player with a modern athletic look, against a neon green and dark navy background, embodying the high-stakes elite gaming aesthetic of CrickQuiz." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuMBQHDfr6vE5ijyZXI2iNlXLUh8XSO_LojRBaSphu_htkgzQ24LOL9dPDKfDcyDmEhCUB3aMl6WWYn1h0qpR8HvOTawJWhGlr-_SEzAWfmc25-M16vsxMGy_Yx7tRMfyw31rWpOuPqfCYPNQLkB8TBaqcutmS-i_oxbWOIUKObsCQmzac0T2T7MRIIVbqQEfyz_U_SL7gmnvvKGq-0I_Naz5aK8duacA7uxqSjNH2b2mgsCaZqwbzduNUU6hJwrObOKhAtHzXMFE">
+</div>
+                                Aussie_Ace
+                            </td>
+<td class="px-6 py-6 font-label-caps opacity-70">AUS</td>
+<td class="px-6 py-6 text-right font-display-hero text-on-surface text-2xl">980,440</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors group">
+<td class="px-6 py-6 font-display-hero text-2xl italic">04</td>
+<td class="px-6 py-6 font-bold flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-container-highest rounded-full overflow-hidden border border-white/20">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="A stylized digital avatar of a professional cricket player with a modern athletic look, against a neon green and dark navy background, embodying the high-stakes elite gaming aesthetic of CrickQuiz." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTy9eCfwBcbMrUthhwLieZSp_p32kGsiHG3ZwJ35IPSKMs8Jh-Xm80qd94PXYhsid-gDVsSEnAokUpO26J8TluMnl4d5V2mTy7kqMkSEhyPCW6lfR6_nW-TbG47uZnZD9eZzFN10uqSlkTxgc5FdEnzZpwmpUrQW3xfI8f4ICdGc_RnDF32dual8F9r03nse0CTQJgnzihirEt0YAbsS0EUedUVHx58NEL4saaVmpKaG-zSZKJr2AKyGqnAq8AOH84QNnSMZzO68w">
+</div>
+                                CoverDrive_King
+                            </td>
+<td class="px-6 py-6 font-label-caps opacity-70">PAK</td>
+<td class="px-6 py-6 text-right font-display-hero text-on-surface text-2xl">875,100</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors group">
+<td class="px-6 py-6 font-display-hero text-2xl italic">05</td>
+<td class="px-6 py-6 font-bold flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-container-highest rounded-full overflow-hidden border border-white/20">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="A stylized digital avatar of a professional cricket player with a modern athletic look, against a neon green and dark navy background, embodying the high-stakes elite gaming aesthetic of CrickQuiz." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNMflrof2RF8EpcJ1qazr7i76udmFDkHbYx2jMjbfWm6j7MZ-Lt0-sPKdmeFGTZ2G1NbojLmw0rG3e3xunl5ygaeXboriX5HNIFbbeq0IX0gBbWatWIxHp6HBwJD-o9AgvrnncXrpAm8PUX93E7a-l6Jv9q3iO7LS4V8Dg37wx9Id5SCTtFEXkqRQarboklE_A_6J6oee7sU1DI2gqSTPGTQlzIImZ0FMo-c1Djzo-HinHmmZaOekRProHnVXv2kX0GMMtr1vzakQ">
+</div>
+                                Kiwi_Quiet
+                            </td>
+<td class="px-6 py-6 font-label-caps opacity-70">NZ</td>
+<td class="px-6 py-6 text-right font-display-hero text-on-surface text-2xl">842,900</td>
+</tr>
+<!-- Personal Placeholder -->
+<tr class="bg-primary/20 border-t-2 border-primary">
+<td class="px-6 py-6 font-display-hero text-2xl italic text-primary">#??</td>
+<td class="px-6 py-6 font-bold flex items-center gap-3">
+<div class="w-10 h-10 bg-primary/30 rounded-full flex items-center justify-center border border-primary">
+<span class="material-symbols-outlined text-primary text-xl">person</span>
+</div>
+                                YOU
+                            </td>
+<td class="px-6 py-6 font-label-caps opacity-70">GLOBAL</td>
+<td class="px-6 py-6 text-right font-label-caps text-primary">JOIN NOW TO RANK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Hype Section -->
+<section class="relative h-[600px] flex items-center justify-center text-center overflow-hidden">
+<img alt="" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDit3RXzRY2lRjcaST-wVB0FEzZXd4DV_9r232gzGOhf5iQmDgzLmypryadFZmgOgXZrKIxfZAXOCSIdFoNf9w3U-83GO5uLeRPd-53uJhAQPgrdLuYoRKabYboTT1LLSu9YyIh-34XDJX16DYCd2i8ZSSuVsMH6iBHEMsC42agjTtF2PdJL3186Jbpyjwwod0oVZl7D9YncpILXQSxYmS6xz8B5XUNwpA7SpABNxhwyIljqbrwppu1DS43o7dbtiFBgiTC2WwXBU4" style="filter: brightness(0.3) saturate(0.5);">
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-surface"></div>
+<div class="relative z-10 px-container-padding">
+<h2 class="font-display-hero text-6xl md:text-8xl uppercase italic tracking-tighter mb-8 leading-none">
+                ONLY REAL <br><span class="text-primary drop-shadow-[0_0_20px_rgba(105,236,156,0.8)]">CRICKET FANS</span> <br>SURVIVE
+            </h2>
+<button class="bg-primary text-surface font-display-hero text-3xl px-16 py-6 skew-container hover:scale-110 transition-transform shadow-[0_0_50px_rgba(105,236,156,0.5)]">
+<span class="unskew-content uppercase block">CLAIM YOUR LEGACY</span>
+</button>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest py-section-gap border-t border-surface-container-highest">
+<div class="flex flex-col items-center gap-8 px-container-padding max-w-7xl mx-auto text-center">
+<div class="font-headline-lg text-headline-lg text-stadium-white italic tracking-tighter uppercase">CRICKQUIZ <span class="text-primary">ELITE MASTER</span></div>
+<div class="flex flex-wrap justify-center gap-x-12 gap-y-4">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="terms.html">Terms of Service</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="privacy.html">Privacy Policy</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Fair Play</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Sponsorships</a>
+</div>
+<div class="flex gap-6">
+<a class="w-12 h-12 bg-surface-container-high rounded-none skew-container flex items-center justify-center hover:bg-primary group transition-colors" href="#">
+<span class="unskew-content material-symbols-outlined text-on-surface group-hover:text-surface">public</span>
+</a>
+<a class="w-12 h-12 bg-surface-container-high rounded-none skew-container flex items-center justify-center hover:bg-primary group transition-colors" href="#">
+<span class="unskew-content material-symbols-outlined text-on-surface group-hover:text-surface">chat</span>
+</a>
+<a class="w-12 h-12 bg-surface-container-high rounded-none skew-container flex items-center justify-center hover:bg-primary group transition-colors" href="#">
+<span class="unskew-content material-symbols-outlined text-on-surface group-hover:text-surface">share</span>
+</a>
+</div>
+<div class="font-body-md text-on-surface-variant/50 max-w-2xl mt-4">
+                CRICKQUIZ IS THE OFFICIAL GAME OF CRICKET ELITES. ALL MATCH DATA IS REAL-TIME. REWARDS ARE SUBJECT TO APP TERMS.
+            </div>
+<div class="mb-4">
+    <a href="https://play.google.com/store/apps/details?id=com.crickquizandroid.app" target="_blank" class="inline-flex items-center gap-3 bg-surface-container-high border border-white/10 px-6 py-3 rounded-none skew-container hover:bg-primary hover:border-primary group transition-all">
+        <div class="unskew-content flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary group-hover:text-surface text-2xl">play_store</span>
+            <div class="text-left">
+                <div class="text-[8px] font-label-caps text-on-surface-variant group-hover:text-surface/70 leading-none uppercase">Get it on</div>
+                <div class="font-display-hero text-lg font-bold text-stadium-white group-hover:text-surface uppercase leading-none">Google Play</div>
+            </div>
+        </div>
+    </a>
+</div><div class="font-label-caps text-[10px] text-on-surface-variant mt-8">
+                © 2024 CRICKQUIZ ELITE MASTER. ALL RIGHTS RESERVED.
+            </div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for glass panels and buttons
+        document.querySelectorAll('.skew-container').forEach(el => {
+            el.addEventListener('mousemove', (e) => {
+                const rect = el.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                el.style.setProperty('--mouse-x', `${x}px`);
+                el.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+
+
+</body></html>
